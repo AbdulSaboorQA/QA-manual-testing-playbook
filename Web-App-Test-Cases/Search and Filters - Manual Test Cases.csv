@@ -1,0 +1,79 @@
+Test Case ID,Module,Title,Pre-conditions,Steps,Test Data,Expected Result,Actual Result,Status,Priority,Comments
+TC_SF_01,Search,Verify that the system handles search with lowercase keyword,User is on homepage,Enter 'iphone' in lowercase and press Enter,iphone,Results include iPhone regardless of casing,-,Not Executed,High,Case insensitivity check
+TC_SF_02,,Verify that the system handles search with uppercase keyword,User is on homepage,Enter 'IPHONE' in uppercase and press Enter,IPHONE,Results match keyword regardless of casing,-,Not Executed,Medium,
+TC_SF_03,,Verify that the system handles search with leading/trailing spaces,User is on homepage,Enter ' iPhone 14 ' and press Enter,iPhone 14,System trims whitespace and returns results,-,Not Executed,High,Trim input spaces
+TC_SF_04,,Verify that the system handles search with alphanumeric combination,User is on homepage,Enter 'Nokia3310' and press Enter,Nokia3310,Relevant products like Nokia 3310 shown,-,Not Executed,Medium,
+TC_SF_05,,Verify that the system handles search with long input string,User is on homepage,Paste a 500+ char string and press Enter,"""a""*500",System handles or rejects input gracefully,-,Not Executed,High,Stress test
+TC_SF_06,,Verify that the system handles SQL injection attempt,User is on homepage,"Enter ""1' OR '1'='1"" and press Enter",1' OR '1'='1,"Input sanitized, no backend impact",-,Not Executed,Critical,SQL injection prevention
+TC_SF_07,,Verify that the system handles multilingual input (Arabic),User is on homepage,Enter 'ساعة ذكية' and press Enter,ساعة ذكية,Arabic product results shown if supported,-,Not Executed,Medium,
+TC_SF_08,,Verify that the system handles search while offline,Internet disconnected,Enter 'watch' and press Enter,watch,Offline warning or error shown,-,Not Executed,High,
+TC_SF_09,,Verify that the system handles XSS input via search,User is on homepage,Enter '<script>alert(1)</script>' and press Enter,<script>alert(1)</script>,Input sanitized; no execution,-,Not Executed,Critical,XSS check
+TC_SF_10,,Verify that the system handles search with quotes,User is on homepage,"Enter '""smartphone""' and press Enter","""smartphone""",System parses input properly,-,Not Executed,Medium,
+TC_SF_11,,Verify that the system handles search with numbers only,User is on homepage,Enter '123456' and press Enter,123456,Shows SKU-based products or no results,-,Not Executed,Low,
+TC_SF_12,,Verify that the system handles repeated character search,User is on homepage,Enter 'aaaaaa' and press Enter,aaaaaa,"System handles gracefully, no freeze",-,Not Executed,Low,
+TC_SF_13,,Verify that the system handles HTML tags in input,User is on homepage,Enter '<b>bold</b>' and press Enter,<b>bold</b>,"Input sanitized, no UI impact",-,Not Executed,High,HTML injection test
+TC_SF_14,,Verify that the system handles invalid Unicode input,User is on homepage,Enter '\uDC00' and press Enter,\uDC00,Input rejected safely,-,Not Executed,Medium,
+TC_SF_15,,Verify that the system handles newline in input,User is on homepage,Enter 'iPhone\n14' and press Enter,iPhone\n14,Treated as a valid input or cleaned,-,Not Executed,Medium,
+TC_SF_16,,Verify that the system handles rapid search input and enter,User is on homepage,Type and hit enter rapidly,Samsung,System remains responsive,-,Not Executed,High,Typing performance
+TC_SF_17,,Verify that the system handles high result volume search,User is on homepage,Search 't-shirt',t-shirt,Paginated results or infinite scroll,-,Not Executed,High,Large dataset
+TC_SF_18,,Verify that the system handles special characters in brand name,User is on homepage,Enter 'H&M' and press Enter,H&M,Results for H&M shown,-,Not Executed,High,
+TC_SF_19,,Verify that the system handles recent search reuse,User searched recently,Enter 'Laptop' again,Laptop,Results remain consistent,-,Not Executed,Medium,History test
+TC_SF_20,,Verify that the system handles search during previous load,User searches again before last finishes,"Enter 'watch', then 'phone'","watch, phone",Only last query handled,-,Not Executed,High,Concurrency test
+TC_SF_21,,Verify that the system handles keyboard shortcut search,User on keyboard-supported UI,Press Ctrl+K and search 'iPad',iPad,Shortcut works and fetches results,-,Not Executed,Low,If shortcut is supported
+TC_SF_22,,Verify that the system handles copy-paste search,User is on homepage,Paste 'wireless mouse' in input,wireless mouse,Search handles pasted text,-,Not Executed,Medium,
+TC_SF_23,,Verify that the system handles multi-term search,User is on homepage,Enter 'laptop shirt',laptop shirt,Mixed results or category refinement,-,Not Executed,Medium,
+TC_SF_24,,Verify that the system handles language switch mid-search,User switches language,Search 'teléfono' in Spanish,teléfono,Relevant localized results,-,Not Executed,Medium,
+TC_SF_25,,Verify that the system handles autocomplete usage,User types 'iph',iph,Suggestions shown and selectable,High,-,Not Executed,,
+TC_SF_26,,Verify that the system handles backspace during typing,"User types, deletes, retypes",camera,Real-time update works,Medium,-,Not Executed,,
+TC_SF_27,,Verify that the system handles search under network throttling,Simulate slow network,Search 'tablet',tablet,Loading indicator and stable UI,-,Not Executed,High,
+TC_FL_01,Filters,Verify that a single brand filter is applied correctly,Search results page is loaded,Select 'Samsung' in Brand filter,Brand: Samsung,Only Samsung products are shown,-,Not Executed,High,
+TC_FL_02,,Verify that a minimum price filter is applied correctly,Search results page is loaded,"Set Min price: 100, Max price: empty",Min: 100,All products are ≥ $100,-,Not Executed,High,
+TC_FL_03,,Verify that a maximum price filter is applied correctly,Search results page is loaded,"Set Max price: 500, Min price: empty",Max: 500,All products are ≤ $500,-,Not Executed,High,
+TC_FL_04,,Verify that combined brand and price filters are applied correctly,Search results page is loaded,Select Brand: 'Apple' and Price: 1000–2000,"Apple, 1000–2000",Apple products in price range shown,-,Not Executed,High,
+TC_FL_05,,Verify that a color filter is applied correctly,Search results page is loaded,Select color 'Black',Color: Black,Only black-colored products shown,-,Not Executed,Medium,
+TC_FL_06,,Verify that a size filter is applied correctly,Search results page is loaded,Select size 'M',Size: M,Only size M items shown,-,Not Executed,Medium,
+TC_FL_07,,Verify that the availability filter (in-stock) works correctly,Search results page is loaded,Enable 'In stock only',Availability: In stock,Only available items shown,-,Not Executed,High,
+TC_FL_08,,Verify that the customer rating filter displays only products with matching ratings,Search results page is loaded,Select 4 stars and up,Rating: 4+,All results have rating ≥ 4,-,Not Executed,Medium,
+TC_FL_09,,Verify that the free shipping filter displays only eligible products,Search results page is loaded,Enable 'Free Shipping',Shipping: Free,Only free shipping products shown,-,Not Executed,High,
+TC_FL_10,,Verify that the category filter displays only products from the selected category,Search results page is loaded,Select category 'Laptops',Category: Laptops,Only laptops shown,-,Not Executed,High,
+TC_FL_11,,Verify that multiple brand filters can be applied simultaneously,Search results page is loaded,"Select 'Samsung', 'Apple'","Samsung, Apple",Both brand products shown,-,Not Executed,High,Multiple selection allowed
+TC_FL_12,,Verify that all applied filters can be reset using 'Clear All',Search results page is loaded,"Apply filters, click 'Clear all'",Multiple filters,All filters are cleared,-,Not Executed,High,
+TC_FL_13,,Verify that overlapping price ranges filter results correctly,Search results page is loaded,Set price 0–500 and 400–1000,"0–500, 400–1000",Intersecting range results shown,-,Not Executed,Medium,
+TC_FL_14,,Verify that filters prevent or warn against invalid price ranges (min > max),Search results page is loaded,"Set Min: 1000, Max: 500",Min > Max,Error shown or apply disabled,-,Not Executed,High,Edge validation
+TC_FL_15,,Verify that a filter with no matching results shows an appropriate message,Search results page is loaded,Select rare brand,Brand: XYZ,"""No results found"" message",-,Not Executed,High,Empty state
+TC_FL_16,,Verify that applied filters persist or reset after page refresh,Search results page is loaded,"Apply color filter, refresh browser",Color: Red,Filters persist or reset,-,Not Executed,Medium,
+TC_FL_17,,Verify that applying filters rapidly does not break UI or functionality,Search results page is loaded,Select 5 filters rapidly,Multiple filters,System applies filters correctly,-,Not Executed,High,Stress UI test
+TC_FL_18,,Verify that sorting does not override or reset applied filters,Search results page is loaded,"Apply brand, switch sort",Brand: Apple,"Filters persist, sort changes",-,Not Executed,High,
+TC_FL_19,,Verify that applying filters before search completes does not cause errors,Search results page is loading,Apply brand during search,Brand: Dell,Filter queues or applies safely,-,Not Executed,High,
+TC_FL_20,,Verify that category filters with special characters work correctly,Search results page is loaded,Filter on 'Women’s Fashion',Women’s Fashion,Filter handles special characters,-,Not Executed,Medium,
+TC_FL_21,,Verify that applied filter labels and UI elements remain properly aligned,Search results page is loaded,Apply any filter and inspect,Any filter,Filter tags aligned and readable,-,Not Executed,Medium,UI layout
+TC_FL_22,,Verify that applying many filters does not break UI layout,Search results page is loaded,Apply >10 filters,Multiple filters,Tags wrap or scroll correctly,-,Not Executed,High,Container overflow
+TC_FL_23,,Verify that filters remain accessible after browser resize,Search results page is loaded,Resize to narrow view,Multiple filters,Filters remain visible,-,Not Executed,Medium,Responsive layout
+TC_FL_24,,Verify that tooltips are displayed correctly on filter labels,Search results page is loaded,Hover on filter info icon,Tooltip,Tooltip appears within bounds,-,Not Executed,Low,
+TC_FL_25,,Verify that the 'Clear All' button remains visible after applying filters,Search results page is loaded,"Apply filters, verify button",Multiple filters,Button always visible,-,Not Executed,Medium,
+TC_FL_26,,Verify that filters remain accessible after scrolling search results,Search results page is loaded,Apply filter and scroll down,Any filter,Filters stay sticky or accessible,-,Not Executed,Medium,
+TC_FL_27,,Verify that filters apply correctly under slow or throttled network conditions,Search results page is loaded,Throttle network and apply filter,Any filter,Slower but stable result,-,Not Executed,High,
+TC_FL_28,,Verify that the system handles application of 20 or more filters without failure,Search results page is loaded,Select filters from all sections,All filters,System handles load gracefully,-,Not Executed,High,
+TC_FL_29,,Verify that toggling filters rapidly does not cause instability,Search results page is loaded,Apply/remove filters repeatedly,Any,No crash or freeze,-,Not Executed,High,
+TC_FL_30,,Verify that filters remain applied when navigating to another results page,Search results page is loaded,"Apply filter, go to next page",Brand: HP,Filter still applied,-,Not Executed,High,
+TC_FL_31,,Verify that repeated sorting does not remove active filters,Search results page is loaded,"Apply filter, change sort 5x",Sort + Brand,Results update properly,-,Not Executed,High,
+TC_FL_32,,Verify that the system handles logically contradictory filters gracefully,Search results page is loaded,Apply 0–100 and 500–1000,Contradictory,No results or logical merge,-,Not Executed,Medium,
+TC_FL_33,,Verify that a loading animation appears when applying filters,Search results page is loaded,"Enable filter, observe load",Any,Loading indicator visible,-,Not Executed,Medium,
+TC_FL_34,,Verify that clicking filter checkboxes rapidly does not break functionality,Search results page is loaded,Rapid clicks on rating checkbox,Rating: 4+,UI behaves correctly,-,Not Executed,Medium,
+TC_FL_35,,Verify that filter options are accessible and operable using keyboard navigation,Search results page is loaded,Use tab + space to apply,Keyboard nav,Filters toggle via keyboard,-,Not Executed,Medium,Accessibility
+TC_FL_36,,Verify that applied filters do not persist across browser tabs unless intended,Search results page is loaded,"Apply filter, open new tab",Brand: Lenovo,Filter not shared unless persisted,-,Not Executed,Low,Session scope
+TC_FL_37,,Verify that browser back navigation restores or maintains filters properly,Search results page is loaded,"Apply filter, hit back button",Brand: HP,Previous state restored or handled,-,Not Executed,High,History
+TC_FL_38,,Verify that switching between list/grid view retains applied filters,Search results page is loaded,"Apply filter, change to list view",Brand: ASUS,Filters persist,-,Not Executed,Medium,
+TC_FL_39,,Verify that keyboard tabbing through filters follows logical focus order,Search results page is loaded,Tab through filters,All filters,Logical focus flow,-,Not Executed,Medium,
+TC_FL_40,,Verify that disabled filters cannot be selected or activated,Search results page is loaded,Try selecting disabled item,Disabled,Selection ignored,-,Not Executed,High,
+TC_FL_41,,Verify that clicking on removed or stale filter elements does not crash the page,Search results page is loaded,"Delete element, try click",Manual DOM,No crash,-,Not Executed,Medium,
+TC_FL_42,,Verify that broken thumbnails in filters show fallbacks or placeholders,Search results page is loaded,Trigger broken color swatch,Broken image,Placeholder used,-,Not Executed,Medium,
+TC_FL_43,,Verify that filters persist or reset correctly after user login,Search results page is loaded,"Apply filter, login",Any filter,Persist or reset based on rules,-,Not Executed,Medium,
+TC_FL_44,,Verify that applying a filter after session expiry prompts re-authentication,Session expired,Apply filter,Brand: Sony,Prompt login or renew session,-,Not Executed,High,
+TC_FL_45,,Verify that filters can be applied via URL parameters,Search results page is loaded,Add ?brand=Apple in URL,?brand=Apple,Filter applied via deep link,-,Not Executed,High,
+TC_FL_46,,Verify that invalid filter parameters in URL do not crash the system,Search results page is loaded,Add ?brand=invalid,Invalid brand,"No results, no crash",-,Not Executed,High,
+TC_FL_47,,Verify that applying the same filter from different UI sections works correctly,Search results page is loaded,Select brand from sidebar + dropdown,Brand: HP,No duplication,-,Not Executed,Medium,
+TC_FL_48,,Verify that filters function correctly on slow or low-end devices,Old/slow machine,Apply brand filter,Brand: Asus,Works but slower,-,Not Executed,Low,
+TC_FL_49,,Verify that filters can be applied and removed using only keyboard,Keyboard-only navigation,Apply filters via tab/space,Brand: Lenovo,Fully accessible,-,Not Executed,Medium,
+TC_FL_50,,Verify that keyboard focus state is visually distinguishable on filter elements,Use tab to focus,Observe visual cues,All filters,Focus outline visible,-,Not Executed,Medium,
+TC_FL_51,,Verify that toggling all filters quickly does not cause system instability,Search results page is loaded,Toggle all brand filters rapidly,All brands,No console errors,-,Not Executed,High,
