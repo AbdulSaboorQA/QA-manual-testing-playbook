@@ -17,7 +17,7 @@ This template is designed to be **generic and reusable**, while still matching *
 
 ---
 
-## 0) Document control
+## 1) Document control
 - **Document ID:** TP-______
 - **Project / Product:** ______
 - **Test level:** System / Integration / UAT / Release / Regression
@@ -26,19 +26,19 @@ This template is designed to be **generic and reusable**, while still matching *
 - **Last updated:** YYYY-MM-DD
 - **Approvers:** (PM/PO, Eng Lead, QA Lead)
 
-### 0.1 Change log
+### 1.1 Change log
 | Version | Date | Author | Change summary |
 |---|---|---|---|
 | v0.1 | YYYY-MM-DD | ____ | Initial draft |
 | v0.2 | YYYY-MM-DD | ____ | Updated scope / matrices / exit criteria |
 
-### 0.2 Distribution / stakeholders
+### 1.2 Distribution / stakeholders
 - **Primary:** QA, Eng Lead, PM/PO
 - **Secondary:** Support, DevOps, Security, Analytics (as applicable)
 
 ---
 
-## 1) References
+## 2) References
 Link the sources of truth that define “expected behavior” and constraints:
 - PRD / Requirements: ______
 - User stories / Tickets (Jira/Linear/etc.): ______
@@ -51,16 +51,16 @@ Link the sources of truth that define “expected behavior” and constraints:
 
 ---
 
-## 2) Purpose & objectives
-### 2.1 Purpose
+## 3) Purpose & objectives
+### 3.1 Purpose
 Describe why this plan exists (e.g., release validation for checkout changes, regression, new feature verification).
 
-### 2.2 Test objectives (measurable)
+### 3.2 Test objectives (measurable)
 - Objective 1: ______
 - Objective 2: ______
 - Objective 3: ______
 
-### 2.3 Quality / release goals
+### 3.3 Quality / release goals
 Examples:
 - **0 open Blocker/Critical defects** for conversion-critical journeys
 - P0 suite execution coverage = **100%**
@@ -69,8 +69,8 @@ Examples:
 
 ---
 
-## 3) Scope
-### 3.1 In-scope
+## 4) Scope
+### 4.1 In-scope
 List features/modules in scope (group by platform):
 
 **Web:**
@@ -82,16 +82,16 @@ List features/modules in scope (group by platform):
 **APIs / Services:**
 - ______
 
-### 3.2 Out-of-scope
+### 4.2 Out-of-scope
 - ______ (and why)
 
-### 3.3 Assumptions & dependencies
+### 4.3 Assumptions & dependencies
 - **Assumptions:** ______
 - **Dependencies:** payments provider, OTP/email/SMS, analytics, CDN, third-party SDKs, app stores, etc.
 
 ---
 
-## 4) Test items
+## 5) Test items
 What is being tested (builds/services/environments):
 - **Web URL(s):** ______
 - **Mobile builds:** iOS (____), Android (____)
@@ -100,16 +100,16 @@ What is being tested (builds/services/environments):
 
 ---
 
-## 5) Test strategy (risk-based)
+## 6) Test strategy (risk-based)
 A test plan documents scope/approach/resources/schedule and includes items such as techniques, environment, entry/exit criteria, and risks/contingencies. :contentReference[oaicite:6]{index=6}
 
-### 5.1 Risk assessment
+### 6.1 Risk assessment
 | Risk | Impact | Likelihood | Coverage / mitigation |
 |---|---|---:|---|
 | Example: Payment failure handling | Revenue + trust | High | Negative tests + recovery + logs |
 | Example: Mobile layout breaks | Conversion drop | Medium | Responsive/device matrix + smoke |
 
-### 5.2 Test types included
+### 6.2 Test types included
 Tick what applies and define the minimum “done” for each:
 - Smoke
 - Sanity
@@ -122,7 +122,7 @@ Tick what applies and define the minimum “done” for each:
 - Security-aware checks (basic)
 - Performance smoke / load (if applicable)
 
-### 5.3 Test design techniques
+### 6.3 Test design techniques
 - Equivalence partitioning
 - Boundary value analysis
 - Decision tables
@@ -130,7 +130,7 @@ Tick what applies and define the minimum “done” for each:
 - Pairwise testing (configs)
 - Exploratory testing “tours” (money-flow, interruption, error handling)
 
-### 5.4 Traceability approach (lightweight but professional)
+### 6.4 Traceability approach (lightweight but professional)
 Choose one:
 - **Stories → Scenarios → Defects**
 - **Requirements → Test cases → Automation → Defects**
@@ -138,7 +138,7 @@ Choose one:
 
 Traceability location (tool/link): ______
 
-### 5.5 Compatibility testing (MANDATORY)
+### 6.5 Compatibility testing (MANDATORY)
 Define how you’ll validate consistent behavior across browsers/devices.
 
 **Web (cross-browser):**
@@ -156,7 +156,7 @@ Define how you’ll validate consistent behavior across browsers/devices.
 **Network conditions (if relevant):**
 - Offline, flaky network, slow 3G mindset for critical flows.
 
-### 5.6 Regression strategy
+### 6.6 Regression strategy
 - What is P0 regression: ______
 - Selection method: change-based + risk-based
 - Frequency: per PR / nightly / release candidate
@@ -164,21 +164,21 @@ Define how you’ll validate consistent behavior across browsers/devices.
 
 ---
 
-## 6) Test environment & data
-### 6.1 Environments
+## 7) Test environment & data
+### 7.1 Environments
 | Environment | Purpose | URL/Build | Notes |
 |---|---|---|---|
 | QA/Staging | full validation |  | mirrors prod (as much as possible) |
 | Prod (sanity) | post-release |  | low-risk checks only |
 
-### 6.2 Test data strategy
+### 7.2 Test data strategy
 - Accounts/roles: ______
 - Catalog/products: ______
 - Payments sandbox methods: ______
 - Data reset/cleanup: ______
 - Data privacy rules (masking/anonymization if needed): ______
 
-### 6.3 Tools (choose per project)
+### 7.3 Tools (choose per project)
 Examples (adapt as needed):
 - Tracking: Jira / Linear
 - API: Postman / Newman
@@ -190,8 +190,8 @@ Examples (adapt as needed):
 
 ---
 
-## 7) Test configuration matrix
-### 7.1 Browser matrix (Web)
+## 8) Test configuration matrix
+### 8.1 Browser matrix (Web)
 | Browser | Version(s) | Priority | Notes |
 |---|---|---:|---|
 | Chrome | latest, n-1 | P0 | primary |
@@ -199,7 +199,7 @@ Examples (adapt as needed):
 | Edge | latest | P1 | |
 | Firefox | latest | P1 | |
 
-### 7.2 Device/OS matrix (Mobile / Mobile web)
+### 8.2 Device/OS matrix (Mobile / Mobile web)
 | Platform | Tier | OS versions | Priority | Notes |
 |---|---|---|---:|---|
 | iOS | mid/latest | N, N-1 | P0 | Safari / native |
@@ -207,20 +207,20 @@ Examples (adapt as needed):
 
 ---
 
-## 8) Entry / exit / suspension criteria
-### 8.1 Entry criteria
+## 9) Entry / exit / suspension criteria
+### 9.1 Entry criteria
 - Environment stable + build deployed
 - Release notes/change list available
 - Test data ready
 - Dependencies reachable (payments, OTP/email, etc.)
 
-### 8.2 Exit criteria (release recommendation)
+### 9.2 Exit criteria (release recommendation)
 - 100% of P0 tests executed
 - 0 open Blocker/Critical defects (or explicitly accepted with risk)
 - Compatibility checks complete for P0 screens/flows
 - Test summary report produced
 
-### 8.3 Suspension & resumption
+### 9.3 Suspension & resumption
 Suspend if:
 - Environment instability blocks execution > X hours
 - P0 flow blocked for all users
@@ -230,14 +230,14 @@ Resume when:
 
 ---
 
-## 9) Test monitoring, control & communication
+## 10) Test monitoring, control & communication
 Test management includes **monitoring and control**: track progress/results/deviations, take corrective actions, and report status to stakeholders. :contentReference[oaicite:7]{index=7}
 
-### 9.1 Execution tracking
+### 10.1 Execution tracking
 - Source of truth (TestRail/Jira/Sheet): ______
 - Progress tracking method: % executed, pass/fail/blocked, risk coverage: ______
 
-### 9.2 Daily QA status update (template)
+### 10.2 Daily QA status update (template)
 - Build tested: ______
 - Scope executed today: ______
 - Pass/Fail/Blocked: ___ / ___ / ___
@@ -245,22 +245,22 @@ Test management includes **monitoring and control**: track progress/results/devi
 - Key risks / concerns: ______
 - Next focus (24h): ______
 
-### 9.3 Bug triage
+### 10.3 Bug triage
 - Cadence: daily / weekly / on-demand
 - Attendees: QA Lead, Eng Lead, PM/PO (+ others as needed)
 - SLA for retest: ______
 
 ---
 
-## 10) Defect management & quality bar
-### 10.1 Severity definitions
+## 11) Defect management & quality bar
+### 11.1 Severity definitions
 - Blocker: core journey unusable / blocks testing
 - Critical: major revenue/security/data integrity impact
 - Major: significant feature broken with workaround
 - Minor: low impact / UI / usability
 - Trivial: polish/typos
 
-### 10.2 Bug quality bar (minimum)
+### 11.2 Bug quality bar (minimum)
 Every defect includes:
 - Summary + user impact
 - Environment/build
@@ -271,7 +271,7 @@ Every defect includes:
 
 ---
 
-## 11) Deliverables
+## 12) Deliverables
 - Test plan
 - Test scenarios/cases + traceability (if required)
 - Execution evidence
@@ -281,7 +281,7 @@ Every defect includes:
 
 ---
 
-## 12) Roles & responsibilities
+## 13) Roles & responsibilities
 | Role | Name | Responsibilities |
 |---|---|---|
 | QA Lead |  | strategy, reporting, sign-off |
@@ -291,7 +291,7 @@ Every defect includes:
 
 ---
 
-## 13) Schedule & milestones
+## 14) Schedule & milestones
 | Activity | Owner | Start | End | Output |
 |---|---|---|---|---|
 | Planning | QA Lead |  |  | Approved plan |
@@ -301,7 +301,7 @@ Every defect includes:
 
 ---
 
-## 14) Risks & contingencies
+## 15) Risks & contingencies
 | Risk | Impact | Mitigation | Contingency |
 |---|---|---|---|
 | Env instability | delays | early smoke | backup env / timebox |
@@ -309,7 +309,7 @@ Every defect includes:
 
 ---
 
-## 15) Approvals
+## 16) Approvals
 | Name | Role | Approval | Date |
 |---|---|---|---|
 |  | PM/PO | ✅/❌ |  |
