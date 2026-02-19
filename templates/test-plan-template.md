@@ -8,9 +8,9 @@
 ## About this template (standards + practical usage)
 This template is designed to be **generic and reusable**, while still matching **real-world test planning** expectations.
 
-- **ISTQB-aligned:** A *test plan* documents the **scope, approach, resources, and schedule** of intended test activities, and identifies items such as **test items**, **features to be tested**, **test tasks**, **test environment**, **test design techniques**, **entry/exit criteria**, and **risks/contingencies**. :contentReference[oaicite:3]{index=3}  
-- **IEEE 829-style structure:** Includes common elements such as **test items**, **features to be tested/not tested**, **approach**, **pass/fail criteria**, **suspension/resumption**, **deliverables**, **environmental needs**, **responsibilities**, **schedule**, **risks**, and **approvals**. :contentReference[oaicite:4]{index=4}  
-- **Optional ISO/IEC/IEEE 29119 alignment:** The ISO 29119-3 standard provides templates/examples for test documentation; this template is compatible with that style if your client prefers ISO framing. :contentReference[oaicite:5]{index=5}  
+- **ISTQB-aligned:** A *test plan* documents the **scope, approach, resources, and schedule** of intended test activities, and identifies items such as **test items**, **features to be tested**, **test tasks**, **test environment**, **test design techniques**, **entry/exit criteria**, and **risks/contingencies**.
+- **IEEE 829-style structure:** Includes common elements such as **test items**, **features to be tested/not tested**, **approach**, **pass/fail criteria**, **suspension/resumption**, **deliverables**, **environmental needs**, **responsibilities**, **schedule**, **risks**, and **approvals**.
+- **Optional ISO/IEC/IEEE 29119 alignment:** The ISO 29119-3 standard provides templates/examples for test documentation; this template is compatible with that style if your client prefers ISO framing. 
 
 > **Experience note:**  
 > This template reflects my practical test planning approach across multiple client projects and domains, using risk-based execution and clear go/no-go criteria while remaining lightweight enough for Agile delivery.
@@ -101,7 +101,7 @@ What is being tested (builds/services/environments):
 ---
 
 ## 6) Test strategy (risk-based)
-A test plan documents scope/approach/resources/schedule and includes items such as techniques, environment, entry/exit criteria, and risks/contingencies. :contentReference[oaicite:6]{index=6}
+A test plan documents scope/approach/resources/schedule and includes items such as techniques, environment, entry/exit criteria, and risks/contingencies. 
 
 ### 6.1 Risk assessment
 | Risk | Impact | Likelihood | Coverage / mitigation |
@@ -231,7 +231,7 @@ Resume when:
 ---
 
 ## 10) Test monitoring, control & communication
-Test management includes **monitoring and control**: track progress/results/deviations, take corrective actions, and report status to stakeholders. :contentReference[oaicite:7]{index=7}
+Test management includes **monitoring and control**: track progress/results/deviations, take corrective actions, and report status to stakeholders. 
 
 ### 10.1 Execution tracking
 - Source of truth (TestRail/Jira/Sheet): ______
