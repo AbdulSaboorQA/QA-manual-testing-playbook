@@ -8,9 +8,9 @@
 ## About this strategy (standards and real-world experience)
 
 ### Standards alignment
-- A **test strategy** describes **how testing will be performed** to reach test objectives under given circumstances. :contentReference[oaicite:3]{index=3}
+- A **test strategy** describes **how testing will be performed** to reach test objectives under given circumstances.
 - This document stays **stable across releases**, while release-specific scope/schedule/execution details belong in a **test plan**.
-- An organizational test strategy is a **generic** guideline for projects within scope (not project-specific). :contentReference[oaicite:4]{index=4}
+- An organizational test strategy is a **generic** guideline for projects within scope (not project-specific).
 
 ### Experience note
 > This strategy reflects how I’ve led and executed QA across multiple client projects in fast delivery environments (Agile/CI).  
@@ -27,7 +27,7 @@
 - **Last updated:** 2026-02-20
 - **Approvers:** Eng Lead, Product Lead, QA Lead
 
-> Note: Document versions should be uniquely identifiable (date/version/author/approval/status). :contentReference[oaicite:5]{index=5}
+> Note: Document versions should be uniquely identifiable (date/version/author/approval/status). 
 
 ### 1.1 Change log
 | Version | Date | Author | Change summary |
