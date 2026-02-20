@@ -1,4 +1,4 @@
-# Test Plan (Example) — E-commerce Checkout Release Validation (Web + Mobile Web + API)
+# Test Plan (Example): E-commerce Checkout Release Validation (Web + Mobile Web + API)
 
 > **Document purpose:** Filled example that demonstrates how I plan and execute testing for a conversion-critical eCommerce release.  
 > **How to use:** Keep this file in `/examples` and keep a reusable blank template in `/templates`.
