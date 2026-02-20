@@ -1,4 +1,4 @@
-# Test Strategy (Example): eCommerce Platform (Web + Mobile + API)
+# Test Strategy (Example): E-commerce Platform (Web + Mobile + API)
 
 > This example demonstrates how the **Test Strategy Template** looks when filled.  
 > Names and targets are intentionally generic while keeping the content realistic and client-readable.
