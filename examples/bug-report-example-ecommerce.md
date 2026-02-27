@@ -7,7 +7,7 @@
 
 ## Bug 1 — Payments (3DS cancel)
 
-### A) Bug summary (columns)
+### A) Bug summary
 
 | Field | Value |
 |---|---|
@@ -56,7 +56,7 @@
 
 ## Bug 2 — Totals integrity (coupon + shipping recalculation)
 
-### A) Bug summary (columns)
+### A) Bug summary
 
 | Field | Value |
 |---|---|
@@ -104,7 +104,7 @@
 
 ## Bug 3 — Duplicate order risk (double tap / rapid click)
 
-### A) Bug summary (columns)
+### A) Bug summary
 
 | Field | Value |
 |---|---|
@@ -149,7 +149,7 @@
 
 ## Bug 4 — Search & filters (pagination resets filters)
 
-### A) Bug summary (columns)
+### A) Bug summary
 
 | Field | Value |
 |---|---|
@@ -195,7 +195,7 @@
 
 ## Bug 5 — Mobile web UX (keyboard covers CTA)
 
-### A) Bug summary (columns)
+### A) Bug summary
 
 | Field | Value |
 |---|---|
