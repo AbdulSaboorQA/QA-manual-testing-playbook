@@ -1,4 +1,4 @@
-# Bug report examples (eCommerce)
+# Bug report (eCommerce)
 
 > **Purpose:** Showcase real-world bug reporting quality in a column-based layout (like Jira/Linear lists), while preserving the core details devs need: steps, expected vs actual, environment, evidence.  
 > **Note:** All URLs/IDs are placeholders; no client data/PII included.
